@@ -1,23 +1,16 @@
 import './App.css';
+import  {ArticleList} from './components/ArticlesList/ArticleList'
+import { articlesData } from './data/data';
+
+const isOpen = false
 
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
       <p>hi</p>
+      {articlesData.length > 0 && <ArticleList data={articlesData}/>}
+      {/* {isOpen === true && <div>modal</div>} */}
+      {isOpen ? <div>modal</div>: <p>модальне вікно закрите</p>}
     </div>
   );
 }
